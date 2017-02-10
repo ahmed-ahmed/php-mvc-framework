@@ -14,7 +14,8 @@ abstract class ControllerBase{
     }
 
     protected function returnView($viewModel, $fullView) {
-        $view = 'views/'.get_class($this).'/'.$this->action.'php';
+        $view = 'views/'.get_class($this).'/'.$this->action.'.php';
+        $view = strtolower($view);
         if($fullView) {
             require('views/main.php');
         } else {
